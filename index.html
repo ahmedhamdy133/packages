@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cinematic Portfolio Packages by Ahmed Hamdy — High-performance modern web development tiers with interactive assembly, real-time pricing calculations, and instant WhatsApp inquiry.">
+  <meta name="theme-color" content="#08090e">
+  <title>Portfolio Packages — Cinematic Web Development Solutions</title>
+
+  <!-- Google Fonts: Syne & Outfit (Display) + Plus Jakarta Sans (Body) + JetBrains Mono (Tech/Code) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Scroll Progress Bar -->
+  <div id="scroll-progress" class="scroll-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Reading progress"></div>
+
+  <!-- Custom Cursor Elements (Desktop only, hidden on touch) -->
+  <div id="cursor-dot" class="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" class="cursor-ring" aria-hidden="true">
+    <span id="cursor-text" class="cursor-text"></span>
+  </div>
+
+  <!-- Ambient Cinematic Background Visuals -->
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="orb orb-primary"></div>
+    <div class="orb orb-secondary"></div>
+    <div class="orb orb-accent"></div>
+    <canvas id="particles-canvas" class="particles-canvas"></canvas>
+    <div class="noise-grid-overlay"></div>
+  </div>
+
+  <!-- Sticky Glass Navbar -->
+  <header class="navbar-wrapper">
+    <nav class="navbar" aria-label="Main Navigation">
+      <a href="#home" class="nav-brand" aria-label="Ahmed Hamdy - Home">
+        <span class="brand-bracket">&lt;</span><span class="brand-name">Hamdy</span><span class="brand-dot">.</span><span class="brand-code">Packages</span><span class="brand-bracket">&gt;</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#basic" class="nav-link">Basic</a></li>
+        <li><a href="#professional" class="nav-link">Professional</a></li>
+        <li><a href="#advanced" class="nav-link">Advanced</a></li>
+        <li><a href="#custom" class="nav-link">Custom</a></li>
+        <li><a href="#contact" class="nav-link nav-cta-link">Get in Touch</a></li>
+      </ul>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button type="button" class="mobile-toggle" id="mobile-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+        <span class="toggle-bar"></span>
+        <span class="toggle-bar"></span>
+        <span class="toggle-bar"></span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- ========================================================
+         PART 1: HOME (HERO) SECTION
+         ======================================================== -->
+    <section id="home" class="hero-section" aria-label="Hero Section">
+      <div class="container hero-container">
+        
+        <!-- Live Status Pill -->
+        <div class="hero-pill">
+          <span class="pill-pulse" aria-hidden="true"></span>
+          <span class="pill-text">Available for Q2/Q3 Projects • 2026 Production Ready</span>
+        </div>
+
+        <!-- Large Animated Heading with Letter-by-Letter Reveal & Shimmer -->
+        <h1 class="hero-title" id="hero-title" aria-label="Portfolio Packages">
+          <!-- Populated by JS for split letters, with graceful fallback -->
+          <span class="title-word word-portfolio">Portfolio</span>
+          <span class="title-word word-packages">Packages</span>
+        </h1>
+
+        <!-- Short Subtitle -->
+        <p class="hero-subtitle">
+          Cinematic, high-conversion web development crafted with bespoke engineering.
+          Explore modular tiers tailored to elevate your brand from concept to live deployment.
+        </p>
+
+        <!-- Hero Actions -->
+        <div class="hero-actions">
+          <a href="#packages" class="btn btn-primary" id="btn-view-packages" aria-label="View Packages section">
+            <span class="btn-text">View Packages</span>
+            <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10 3a.75.75 0 01.75.75v10.69l3.72-3.72a.75.75 0 111.06 1.06l-5 5a.75.75 0 01-1.06 0l-5-5a.75.75 0 111.06-1.06l3.72 3.72V3.75A.75.75 0 0110 3z" clip-rule="evenodd"/>
+            </svg>
+          </a>
+          <a href="#contact" class="btn btn-secondary" aria-label="Scroll to Get in Touch">
+            <span class="btn-text">Get in Touch</span>
+          </a>
+        </div>
+
+        <!-- Tech Spec Badges -->
+        <div class="hero-specs" aria-label="Project Highlights">
+          <div class="spec-item">
+            <span class="spec-metric">60 FPS</span>
+            <span class="spec-label">Silky Animations</span>
+          </div>
+          <div class="spec-divider" aria-hidden="true"></div>
+          <div class="spec-item">
+            <span class="spec-metric">100%</span>
+            <span class="spec-label">Clean Vanilla Stack</span>
+          </div>
+          <div class="spec-divider" aria-hidden="true"></div>
+          <div class="spec-item">
+            <span class="spec-metric">Rush</span>
+            <span class="spec-label">Express Delivery</span>
+          </div>
+        </div>
+
+        <!-- Scroll Down Mouse Indicator -->
+        <div class="scroll-cue" aria-hidden="true">
+          <span class="scroll-cue-text">Scroll to Assemble Architecture</span>
+          <div class="mouse-indicator">
+            <span class="mouse-wheel"></span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         PART 1: BLUEPRINT / ASSEMBLY ANIMATION SECTION (PINNED SCRUB)
+         ======================================================== -->
+    <section id="blueprint-section" class="blueprint-section" aria-label="Interactive Layout Assembly">
+      <div class="blueprint-pin-wrapper" id="blueprint-pin-wrapper">
+        <div class="container blueprint-container">
+          
+          <!-- Blueprint Technical Telemetry Header -->
+          <div class="blueprint-telemetry">
+            <div class="telemetry-left">
+              <span class="telemetry-badge">SYSTEM ARCHITECTURE</span>
+              <span class="telemetry-status">MODULAR COMPOSITION ENGINE // v4.2</span>
+            </div>
+            <div class="telemetry-right">
+              <span class="telemetry-coord">MATRIX: 12-COL GRID</span>
+              <span class="telemetry-progress" id="telemetry-progress-val">ASSEMBLY: 0%</span>
+            </div>
+          </div>
+
+          <!-- The Blueprint Canvas Frame / Chassis -->
+          <div class="blueprint-stage" id="blueprint-stage">
+            
+            <!-- Technical Grid Overlay & Corner Crosshairs -->
+            <div class="stage-crosshair crosshair-tl" aria-hidden="true"></div>
+            <div class="stage-crosshair crosshair-tr" aria-hidden="true"></div>
+            <div class="stage-crosshair crosshair-bl" aria-hidden="true"></div>
+            <div class="stage-crosshair crosshair-br" aria-hidden="true"></div>
+            <div class="stage-grid-lines" aria-hidden="true"></div>
+
+            <!-- Device Browser Chassis Target Frame -->
+            <div class="assembly-chassis" id="assembly-chassis">
+              
+              <!-- Chassis Window Bar -->
+              <div class="chassis-chrome">
+                <div class="chassis-dots">
+                  <span class="dot dot-close"></span>
+                  <span class="dot dot-minimize"></span>
+                  <span class="dot dot-expand"></span>
+                </div>
+                <div class="chassis-address-bar">
+                  <span class="address-lock">🔒</span>
+                  <span class="address-url">https://ahmedhamdy.dev/portfolio-showcase</span>
+                </div>
+                <div class="chassis-status-pill">60 FPS OK</div>
+              </div>
+
+              <!-- Interior Canvas where pieces snap into position -->
+              <div class="chassis-viewport">
+                
+                <!-- Target Wireframe Zones (Where pieces lock) -->
+                <div class="wireframe-target target-nav"></div>
+                <div class="wireframe-target target-hero"></div>
+                <div class="wireframe-target target-grid">
+                  <div class="target-card-slot"></div>
+                  <div class="target-card-slot"></div>
+                  <div class="target-card-slot"></div>
+                  <div class="target-card-slot"></div>
+                </div>
+                <div class="wireframe-target target-footer"></div>
+
+                <!-- Glow Circuit Layer (Illuminates when assembly hits 100%) -->
+                <div class="chassis-glow-layer" id="chassis-glow-layer" aria-hidden="true">
+                  <div class="circuit-glow-pulse"></div>
+                  <div class="circuit-complete-badge">
+                    <span class="badge-icon">⚡</span>
+                    <span class="badge-title">ARCHITECTURE SYNCHRONIZED</span>
+                    <span class="badge-desc">All Modules Snapped & Verified</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Flying Wireframe Lego/Puzzle Pieces (Animated by ScrollTrigger) -->
+            <div class="flying-pieces-container" id="flying-pieces" aria-hidden="true">
+              
+              <!-- Piece 1: Floating Glass Navbar Wireframe -->
+              <div class="bp-piece piece-navbar" id="piece-navbar" data-name="Navbar">
+                <div class="bp-nav-logo"></div>
+                <div class="bp-nav-items">
+                  <span></span><span></span><span></span><span></span>
+                </div>
+                <div class="bp-nav-cta"></div>
+              </div>
+
+              <!-- Piece 2: Hero Block Wireframe -->
+              <div class="bp-piece piece-hero" id="piece-hero" data-name="Hero Block">
+                <div class="bp-tag-line"></div>
+                <div class="bp-title-line line-lg"></div>
+                <div class="bp-title-line line-md"></div>
+                <div class="bp-button-group">
+                  <div class="bp-btn bp-btn-primary"></div>
+                  <div class="bp-btn bp-btn-outline"></div>
+                </div>
+              </div>
+
+              <!-- Piece 3: Mini Card 1 (Basic) -->
+              <div class="bp-piece piece-card piece-card-1" id="piece-card-1" data-name="Basic Card">
+                <div class="card-wire-head">
+                  <span class="wire-title">BASIC</span>
+                  <span class="wire-price">$500</span>
+                </div>
+                <div class="card-wire-lines">
+                  <div></div><div></div><div></div>
+                </div>
+                <div class="card-wire-btns"></div>
+              </div>
+
+              <!-- Piece 4: Mini Card 2 (Professional) -->
+              <div class="bp-piece piece-card piece-card-2" id="piece-card-2" data-name="Pro Card">
+                <div class="card-wire-head">
+                  <span class="wire-title">PRO</span>
+                  <span class="wire-price">$1000</span>
+                </div>
+                <div class="card-wire-lines">
+                  <div></div><div></div><div></div>
+                </div>
+                <div class="card-wire-btns"></div>
+              </div>
+
+              <!-- Piece 5: Mini Card 3 (Advanced Featured) -->
+              <div class="bp-piece piece-card piece-card-3" id="piece-card-3" data-name="Advanced Card">
+                <div class="card-wire-badge">★ POPULAR</div>
+                <div class="card-wire-head">
+                  <span class="wire-title">ADVANCED</span>
+                  <span class="wire-price">$2000</span>
+                </div>
+                <div class="card-wire-lines">
+                  <div></div><div></div><div></div>
+                </div>
+                <div class="card-wire-btns"></div>
+              </div>
+
+              <!-- Piece 6: Mini Card 4 (Custom) -->
+              <div class="bp-piece piece-card piece-card-4" id="piece-card-4" data-name="Custom Card">
+                <div class="card-wire-head">
+                  <span class="wire-title">CUSTOM</span>
+                  <span class="wire-price">$4000</span>
+                </div>
+                <div class="card-wire-lines">
+                  <div></div><div></div><div></div>
+                </div>
+                <div class="card-wire-btns"></div>
+              </div>
+
+              <!-- Piece 7: Footer Wireframe Bar -->
+              <div class="bp-piece piece-footer" id="piece-footer" data-name="Footer">
+                <div class="bp-footer-left"></div>
+                <div class="bp-footer-links">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+
+              <!-- Piece 8 & 9: Floating Code Brackets -->
+              <div class="bp-piece piece-bracket piece-bracket-left" id="piece-bracket-left">&lt;section&gt;</div>
+              <div class="bp-piece piece-bracket piece-bracket-right" id="piece-bracket-right">&lt;/section&gt;</div>
+
+              <!-- Piece 10 & 11: Floating Tech Chips -->
+              <div class="bp-piece piece-chip chip-1" id="piece-chip-1">Grid: CSS Grid</div>
+              <div class="bp-piece piece-chip chip-2" id="piece-chip-2">A11y: WCAG AAA</div>
+
+            </div>
+
+          </div>
+
+          <!-- Bottom Blueprint Caption -->
+          <div class="blueprint-caption">
+            <span class="caption-pulse"></span>
+            <span class="caption-text">Interactive Blueprint snaps smoothly under ScrollTrigger physics</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         PARTS 2 & 3: PACKAGES SECTION (#packages)
+         ======================================================== -->
+    <section id="packages" class="packages-section" aria-label="Available Packages">
+      <div class="container packages-container">
+        
+        <!-- Section Header -->
+        <header class="section-header">
+          <div class="section-pill">
+            <span class="pill-dot"></span>
+            <span>TRANSPARENT VALUE TIERS</span>
+          </div>
+          <h2 class="section-title">Engineered For Your Growth</h2>
+          <p class="section-subtitle">
+            Every package delivers uncompromising performance, responsive layout, and modern aesthetics.
+            Toggle Rush Delivery for rapid turnaround or test live demos directly.
+          </p>
+        </header>
+
+        <!-- 4-Card Responsive Grid (4 Desktop / 2 Tablet / 1 Mobile) -->
+        <div class="packages-grid" id="packages-grid">
+
+          <!-- ==================== CARD 1: BASIC ==================== -->
+          <article class="package-card card-basic" id="basic" data-package-id="basic" data-cursor="Select" aria-labelledby="title-basic">
+            <div class="card-inner">
+              
+              <!-- Card Header -->
+              <div class="card-header">
+                <div class="tier-tag">TIER 01</div>
+                <h3 class="package-name" id="title-basic">Basic</h3>
+                <p class="package-desc">Clean, streamlined single-page presentation for personal brands & portfolios.</p>
+              </div>
+
+              <!-- Price Display with Flip / Counter Animation -->
+              <div class="card-price-block">
+                <div class="price-wrapper">
+                  <span class="currency-symbol">$</span>
+                  <span class="price-value" id="price-basic" data-base="500" data-rush="800">500</span>
+                </div>
+                <span class="price-period">/ one-time flat</span>
+              </div>
+
+              <!-- Feature Bullet Points -->
+              <ul class="package-features" aria-label="Features included in Basic package">
+                <li class="feature-item">
+                  <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
+                  <span>Responsive Single-Page Layout</span>
+                </li>
+                <li class="feature-item">
+                  <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
+                  <span>Clean Vanilla CSS & Modern JS</span>
+                </li>
+                <li class="feature-item">
+                  <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
+                  <span>Direct Contact Form & Socials</span>
+                </li>
+                <li class="feature-item">
+                  <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
+                  <span>Mobile-First Adaptive Design</span>
+                </li>
+                <li class="feature-item">
+                  <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
+                  <span>Standard 5-Day Delivery</span>
+                </li>
+              </ul>
+
+              <!-- Action Row: Side-by-side equal width buttons -->
+              <div class="card-btn-row">
+                <button type="button" class="btn btn-card-contact" data-package="basic" aria-label="Inquire about Basic package">
+                  Contact
+                </button>
+                <button type="button" class="btn btn-card-rush" data-package="basic" aria-pressed="false" aria-label="Toggle Rush Delivery for Basic package (adds 300 dollars)">
+                  + Rush ($300)
+                </button>
+              </div>
+
+              <!-- Full-width Third Row: View Demo -->
+              <div class="card-demo-row">
+                <a href="https://ahmedhamdy133.github.io/portfolio-basic/" target="_blank" rel="noopener noreferrer" class="btn btn-card-demo" aria-label="View Basic live demo in a new tab">
+                  <span>View Demo</span>
+                  <svg class="external-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h4a.75.75 0 010 1.5h-4z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.81l-9.31 8.393a.75.75 0 00-.056 1.06z" clip-rule="evenodd"/></svg>
+                </a>
+              </div>
+
+            </div>
+          </article>
+
+          <!-- ==================== CARD 2: PROFESSIONAL ==================== -->
+          <article class="package-card card-professional" id="professional" data-package-id="professional" data-cursor="Select" aria-labelledby="title-professional">
+            <div class="card-inner">
+              
+              <!-- Card Header -->
+              <div class="card-header">
+                <div class="tier-tag">TIER 02</div>
+                <h3 class="package-name" id="title-professional">Professional</h3>
+                <p class="package-desc">Dynamic multi-section experience with interactive UI & performance tuning.</p>
+              </div>
+
+              <!-- Price Display with Flip / Counter Animation -->
+              <div class="card-price-block">
+                <div class="price-wrapper">
+                  <span class="currency-symbol">$</span>
+                  <span class="price-value" id="price-professional" data-base="1000" data-rush="1300">1000</span>
+                </div>
+                <span class="price-period">/ one-time flat</span>
+              </div>
+
+              <!-- Feature Bullet Points -->
+              <ul class="package-features" aria-label="Features included in Professional package">
+                <li class="feature-item">
+                  <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
+                  <span>Multi-Section Dynamic Layout</span>
+                </li>
+                <li class="feature-item">
+                  <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
+                  <span>Custom Micro-Interactions & CSS FX</span>
+                </li>
+                <li class="feature-item">
+                  <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
+                  <span>95+ Lighthouse Performance Score</span>
+                </li>
+                <li class="feature-item">
+                  <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
+                  <span>Advanced SEO & Social OpenGraph</span>
+                </li>
+                <li class="feature-item">
+                  <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
+                  <span>7-Day Standard (Rush: 3 Days)</span>
+                </li>
+              </ul>
+
+              <!-- Action Row: Side-by-side equal width buttons -->
+              <div class="card-btn-row">
+                <button type="button" class="btn btn-card-contact" data-package="professional" aria-label="Inquire about Professional package">
+                  Contact
+                </button>
+                <button type="button" class="btn btn-card-rush" data-package="professional" aria-pressed="false" aria-label="Toggle Rush Delivery for Professional package (adds 300 dollars)">
+                  + Rush ($300)
+                </button>
+              </div>
+
+              <!-- Full-width Third Row: View Demo -->
+              <div class="card-demo-row">
+                <a href="https://ahmedhamdy133.github.io/portfolio-professional/" target="_blank" rel="noopener noreferrer" class="btn btn-card-demo" aria-label="View Professional live demo in a new tab">
+                  <span>View Demo</span>
+                  <svg class="external-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h4a.75.75 0 010 1.5h-4z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.81l-9.31 8.393a.75.75 0 00-.056 1.06z" clip-rule="evenodd"/></svg>
+                </a>
+              </div>
+
+            </div>
+          </article>
+
+          <!-- ==================== CARD 3: ADVANCED (FEATURED) ==================== -->
+          <article class="package-card card-advanced card-featured" id="advanced" data-package-id="advanced" data-cursor="Best Choice" aria-labelledby="title-advanced">
+            <!-- Shimmer Border Ambient & Most Popular Badge -->
+            <div class="card-glow-border" aria-hidden="true"></div>
+            <div class="popular-ribbon" aria-label="Most Popular Choice">
+              <span class="ribbon-sparkle">★</span>
+              <span>MOST POPULAR</span>
+            </div>
+
+            <div class="card-inner">
+              
+              <!-- Card Header -->
+              <div class="card-header">
+                <div class="tier-tag tier-tag-gold">TIER 03 // RECOMMENDED</div>
+                <h3 class="package-name" id="title-advanced">Advanced</h3>
+                <p class="package-desc">Cinematic showcase with bespoke GSAP motion, parallax depth & high conversion.</p>
+              </div>
+
+              <!-- Price Display with Flip / Counter Animation -->
+              <div class="card-price-block">
+                <div class="price-wrapper">
+                  <span class="currency-symbol">$</span>
+                  <span class="price-value" id="price-advanced" data-base="2000" data-rush="2500">2000</span>
+                </div>
+                <span class="price-period">/ one-time flat</span>
+              </div>
+
+              <!-- Feature Bullet Points -->
+              <ul class="package-features" aria-label="Features included in Advanced package">
+                <li class="feature-item">
+                  <svg class="check-icon check-gold" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
+                  <span>Bespoke GSAP & ScrollTrigger Animations</span>
+                </li>
+                <li class="feature-item">
+                  <svg class="check-icon check-gold" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
+                  <span>3D Interactive Tilt & Specular Parallax</span>
+                </li>
+                <li class="feature-item">
+                  <svg class="check-icon check-gold" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
+                  <span>Full Accessibility (WCAG AAA compliant)</span>
+                </li>
+                <li class="feature-item">
+                  <svg class="check-icon check-gold" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
+                  <span>30-Day Dedicated Post-Launch Support</span>
+                </li>
+                <li class="feature-item">
+                  <svg class="check-icon check-gold" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
+                  <span>10-Day Standard (Rush: 4 Days)</span>
+                </li>
+              </ul>
+
+              <!-- Action Row: Side-by-side equal width buttons -->
+              <div class="card-btn-row">
+                <button type="button" class="btn btn-card-contact btn-gold-contact" data-package="advanced" aria-label="Inquire about Advanced package">
+                  Contact
+                </button>
+                <button type="button" class="btn btn-card-rush" data-package="advanced" aria-pressed="false" aria-label="Toggle Rush Delivery for Advanced package (adds 500 dollars)">
+                  + Rush ($500)
+                </button>
+              </div>
+
+              <!-- Full-width Third Row: View Demo -->
+              <div class="card-demo-row">
+                <a href="https://ahmedhamdy133.github.io/portfolio-ADVANCED/" target="_blank" rel="noopener noreferrer" class="btn btn-card-demo btn-gold-demo" aria-label="View Advanced live demo in a new tab">
+                  <span>View Demo</span>
+                  <svg class="external-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h4a.75.75 0 010 1.5h-4z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.81l-9.31 8.393a.75.75 0 00-.056 1.06z" clip-rule="evenodd"/></svg>
+                </a>
+              </div>
+
+            </div>
+          </article>
+
+          <!-- ==================== CARD 4: CUSTOM ==================== -->
+          <article class="package-card card-custom" id="custom" data-package-id="custom" data-cursor="Contact us" aria-labelledby="title-custom">
+            <div class="card-inner">
+              
+              <!-- Card Header -->
+              <div class="card-header">
+                <div class="tier-tag tier-tag-custom">TIER 04 // ENTERPRISE</div>
+                <h3 class="package-name" id="title-custom">Custom</h3>
+                <p class="package-desc">Bespoke digital architecture tailored to unique enterprise scale & 3D artistry.</p>
+              </div>
+
+              <!-- Price Display with Flip / Counter Animation -->
+              <div class="card-price-block">
+                <div class="price-wrapper">
+                  <span class="currency-symbol">$</span>
+                  <span class="price-value" id="price-custom" data-base="4000" data-rush="4500">4000</span>
+                </div>
+                <span class="price-period">/ starting base</span>
+              </div>
+
+              <!-- Feature Bullet Points -->
+              <ul class="package-features" aria-label="Features included in Custom package">
+                <li class="feature-item">
+                  <svg class="check-icon check-purple" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
+                  <span>Fully Custom Front-End & Back-End Architecture</span>
+                </li>
+                <li class="feature-item">
+                  <svg class="check-icon check-purple" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
+                  <span>Three.js / WebGL Custom Interactive Shaders</span>
+                </li>
+                <li class="feature-item">
+                  <svg class="check-icon check-purple" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
+                  <span>Custom API Integrations & Automation</span>
+                </li>
+                <li class="feature-item">
+                  <svg class="check-icon check-purple" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
+                  <span>Dedicated PM & 24/7 Slack / WhatsApp Sync</span>
+                </li>
+                <li class="feature-item">
+                  <svg class="check-icon check-purple" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
+                  <span>14-Day Delivery (Rush: 6 Days)</span>
+                </li>
+              </ul>
+
+              <!-- Action Row: Side-by-side equal width buttons -->
+              <div class="card-btn-row">
+                <button type="button" class="btn btn-card-contact" data-package="custom" aria-label="Inquire about Custom package">
+                  Contact
+                </button>
+                <button type="button" class="btn btn-card-rush" data-package="custom" aria-pressed="false" aria-label="Toggle Rush Delivery for Custom package (adds 500 dollars)">
+                  + Rush ($500)
+                </button>
+              </div>
+
+              <!-- Full-width Third Row: View Demo -->
+              <div class="card-demo-row">
+                <a href="https://ahmedhamdy133.github.io/portfolio-custom1/" target="_blank" rel="noopener noreferrer" class="btn btn-card-demo btn-custom-demo" aria-label="View Custom live demo in a new tab">
+                  <span>View Demo</span>
+                  <svg class="external-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h4a.75.75 0 010 1.5h-4z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.81l-9.31 8.393a.75.75 0 00-.056 1.06z" clip-rule="evenodd"/></svg>
+                </a>
+              </div>
+
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         PART 4: GET IN TOUCH SECTION (#contact)
+         ======================================================== -->
+    <section id="contact" class="contact-section" aria-label="Contact Section">
+      <div class="container contact-container">
+        
+        <!-- Section Header -->
+        <header class="section-header">
+          <div class="section-pill">
+            <span class="pill-dot pill-dot-green"></span>
+            <span>DIRECT CONNECT</span>
+          </div>
+          <h2 class="section-title">Get in Touch</h2>
+          <p class="section-subtitle">
+            Ready to turn your vision into an award-winning digital reality?
+            Reach out via WhatsApp or Gmail for instant consultation and direct project quotes.
+          </p>
+        </header>
+
+        <!-- Dynamic Inquiry Context Banner (Updates when user clicks package Contact) -->
+        <div class="inquiry-context-banner" id="inquiry-context-banner" role="region" aria-label="Selected Package Inquiry Details">
+          <div class="inquiry-badge-icon">💼</div>
+          <div class="inquiry-text-group">
+            <span class="inquiry-label">Current Selection</span>
+            <div class="inquiry-status-line" id="inquiry-status-line">
+              <strong id="inquiry-package-name">General Inquiry</strong> — <span id="inquiry-price-tag">Custom Quote</span> <span id="inquiry-rush-tag" class="inquiry-rush-tag hidden">with Rush Delivery</span>
+            </div>
+          </div>
+          <button type="button" class="btn-clear-inquiry" id="btn-clear-inquiry" aria-label="Reset package selection to general inquiry">Reset</button>
+        </div>
+
+        <!-- Two Large Contact Action Cards Grid -->
+        <div class="contact-cards-grid">
+          
+          <!-- Contact Card 1: WhatsApp -->
+          <article class="contact-card card-whatsapp" aria-labelledby="wa-card-title">
+            <div class="contact-card-header">
+              <div class="contact-icon-bubble wa-bubble" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+                  <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm0 18.15c-1.48 0-2.94-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 012.41 5.83c.01 4.54-3.68 8.23-8.22 8.23zm4.52-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.12-.23-.19-.48-.31z"/>
+                </svg>
+              </div>
+              <div class="contact-header-text">
+                <span class="contact-channel-tag">DIRECT MESSAGING</span>
+                <h3 class="contact-card-title" id="wa-card-title">WhatsApp</h3>
+              </div>
+              <div class="online-indicator" aria-label="Status: Available Now">
+                <span class="online-dot"></span>
+                <span>Online</span>
+              </div>
+            </div>
+
+            <p class="contact-card-desc">
+              Fastest response time. Direct chat with Ahmed Hamdy for scoping, consultations, and expedited delivery requests.
+            </p>
+
+            <!-- Visible Contact Value -->
+            <div class="contact-value-box">
+              <span class="value-label">Phone / WhatsApp Number</span>
+              <div class="value-text-row">
+                <span class="contact-value" id="whatsapp-number-display">01212585151</span>
+                <span class="intl-code">(+20 Egypt)</span>
+              </div>
+            </div>
+
+            <!-- Action Buttons: Chat & Copy -->
+            <div class="contact-actions-row">
+              <a href="https://wa.me/201212585151" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp-chat" id="whatsapp-link-btn" aria-label="Open WhatsApp conversation in a new tab">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm0 18.15c-1.48 0-2.94-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 012.41 5.83c.01 4.54-3.68 8.23-8.22 8.23z"/></svg>
+                <span id="wa-btn-label">Message on WhatsApp</span>
+              </a>
+              <button type="button" class="btn btn-copy" data-copy-target="01212585151" data-label="WhatsApp number" aria-label="Copy WhatsApp phone number to clipboard">
+                <svg class="copy-icon" viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12a1.5 1.5 0 01.439 1.061V16.5A1.5 1.5 0 0115.5 18h-7A1.5 1.5 0 017 16.5v-13z"/><path d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-1.25a.75.75 0 00-1.5 0v1.25a.25.25 0 01-.25.25h-7a.25.25 0 01-.25-.25v-9a.25.25 0 01.25-.25h1.25a.75.75 0 000-1.5H4.5z"/></svg>
+                <span>Copy</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Contact Card 2: Gmail -->
+          <article class="contact-card card-gmail" aria-labelledby="gmail-card-title">
+            <div class="contact-card-header">
+              <div class="contact-icon-bubble gmail-bubble" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+              </div>
+              <div class="contact-header-text">
+                <span class="contact-channel-tag">OFFICIAL EMAIL</span>
+                <h3 class="contact-card-title" id="gmail-card-title">Gmail</h3>
+              </div>
+              <div class="online-indicator" aria-label="Status: Inbox Monitored">
+                <span class="online-dot dot-blue"></span>
+                <span>Active</span>
+              </div>
+            </div>
+
+            <p class="contact-card-desc">
+              Perfect for structured RFPs, detailed briefs, NDA requests, and project documentation attachments.
+            </p>
+
+            <!-- Visible Contact Value -->
+            <div class="contact-value-box">
+              <span class="value-label">Official Email Address</span>
+              <div class="value-text-row">
+                <span class="contact-value" id="gmail-display">ahmedhamdy44vv@gmail.com</span>
+              </div>
+            </div>
+
+            <!-- Action Buttons: Send Mail & Copy -->
+            <div class="contact-actions-row">
+              <a href="mailto:ahmedhamdy44vv@gmail.com" target="_blank" rel="noopener noreferrer" class="btn btn-gmail-send" id="gmail-link-btn" aria-label="Open default mail client to send an email">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z"/></svg>
+                <span>Send Email</span>
+              </a>
+              <button type="button" class="btn btn-copy" data-copy-target="ahmedhamdy44vv@gmail.com" data-label="Email address" aria-label="Copy email address to clipboard">
+                <svg class="copy-icon" viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12a1.5 1.5 0 01.439 1.061V16.5A1.5 1.5 0 0115.5 18h-7A1.5 1.5 0 017 16.5v-13z"/><path d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-1.25a.75.75 0 00-1.5 0v1.25a.25.25 0 01-.25.25h-7a.25.25 0 01-.25-.25v-9a.25.25 0 01.25-.25h1.25a.75.75 0 000-1.5H4.5z"/></svg>
+                <span>Copy</span>
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Toast Notification Container for Clipboard Copied! Alerts -->
+  <aside id="toast-container" class="toast-container" role="status" aria-live="polite" aria-atomic="true"></aside>
+
+  <!-- Modern Cinematic Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <span class="footer-logo">&lt;Hamdy.Packages /&gt;</span>
+        <p class="footer-tagline">Crafted with modern HTML5, CSS3 & JavaScript. Zero framework overhead, infinite fluidity.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#basic">Basic</a>
+        <a href="#professional">Professional</a>
+        <a href="#advanced">Advanced</a>
+        <a href="#custom">Custom</a>
+        <a href="#contact">Get in Touch</a>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Ahmed Hamdy. All rights reserved. Portfolio Packages Showcase.</p>
+        <a href="#home" class="back-to-top" aria-label="Back to top of page">
+          <span>Back to Top</span>
+          <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 17a.75.75 0 01-.75-.75V5.56L5.53 9.28a.75.75 0 01-1.06-1.06l5-5a.75.75 0 011.06 0l5 5a.75.75 0 11-1.06 1.06L10.75 5.56V16.25A.75.75 0 0110 17z" clip-rule="evenodd"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP 3 & ScrollTrigger via Reliable CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Main Application Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
